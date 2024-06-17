@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>{{ isEdit ? 'Edit' : 'Add' }}</h1>
+<form [formGroup]="myForm">
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input formControlName="username" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
+      <input formControlName="phone" matInput>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button (click)="saveUser()" [disabled]="myForm.invalid" mat-raised-button color="primary">{{ isEdit ? 'Save' : 'Add' }}
+    </button>
+    <button color="accent" (click)="closeDialog()" mat-raised-button>Close</button>
+  </div>
+</form>
